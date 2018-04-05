@@ -69,7 +69,6 @@ public class Start extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==book){
-
         }
         else if(e.getSource()==people){
             new Login(jdbc);

@@ -14,13 +14,13 @@ public class Addinfo extends JFrame implements ActionListener{
     JLabel label3=new JLabel("状态",JLabel.CENTER);
     JLabel label4=new JLabel("编号",JLabel.CENTER);
     JLabel label5=new JLabel("出版社",JLabel.CENTER);
-    JTextField num=new JTextField(2);
-    JTextField name=new JTextField(4);
+    JTextField name=new JTextField(2);
+    JTextField author=new JTextField(4);
     ButtonGroup bgp=new ButtonGroup();
     JRadioButton R1=new JRadioButton("已借出");
     JRadioButton R2=new JRadioButton("未借出");
-    JTextField cla=new JTextField();
-    JTextField scl=new JTextField();
+    JTextField id=new JTextField();
+    JTextField house=new JTextField();
     JButton reset=new JButton("清空");
     JButton addmsg=new JButton("添加");
     JButton turn=new JButton("返回");
@@ -53,20 +53,20 @@ public class Addinfo extends JFrame implements ActionListener{
         panel.add(label3);
         panel.add(label4);
         panel.add(label5);
-        num.setBounds(190,60,140,20);
-        name.setBounds(190,100,140,20);
+        name.setBounds(190,60,140,20);
+        author.setBounds(190,100,140,20);
         R1.setBounds(200,140,80,20);
         R2.setBounds(280,140,80,20);
-        cla.setBounds(190,180,140,20);
-        scl.setBounds(190,220,140,20);
+        id.setBounds(190,180,140,20);
+        house.setBounds(190,220,140,20);
         reset.setBounds(190,260,65,20);
         addmsg.setBounds(265,260,65,20);
-        panel.add(num);
         panel.add(name);
+        panel.add(author);
         panel.add(R1);
         panel.add(R2);
-        panel.add(cla);
-        panel.add(scl);
+        panel.add(id);
+        panel.add(house);
         panel.add(reset);
         panel.add(addmsg);
         bgp.add(R1);
@@ -76,11 +76,12 @@ public class Addinfo extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==addmsg){
             String state=null;
-            String id,nam,clas;
-            id=num.getText();
-            nam=name.getText();
-            clas=cla.getText();
-            if(id.equals("")||nam.equals("")||clas.equals("")){
+            String name,author,id,house;
+            name=this.name.getText();
+            author=this.author.getText();
+            id=this.id.getText();
+            house=this.house.getText();
+            if(name.equals("")||author.equals("")||id.equals("")||house.equals("")){
                 JOptionPane.showMessageDialog(null,"输入的信息不全");
             }
             else if((!R1.isSelected())&&(!R2.isSelected())){
@@ -95,15 +96,20 @@ public class Addinfo extends JFrame implements ActionListener{
                     state="未借";
                 }
                 try{
-                    ResultSet rs=jdbc.getSt().executeQuery("select * from stu where ID=\'"+id+"\'");
+                    ResultSet rs=jdbc.getSt().executeQuery("select * from books where name=\'"+name+"\'");
                     if(rs.next()) {
-                        String sql = "delect from stu where ID=\'" + id + "\'";
+                        String sql = "delect from books where name=\'" + name + "\'";
                         jdbc.getSt().executeUpdate(sql);
                     }
-                    int a=jdbc.getSt().executeUpdate("insert into books (NAME,AUTHOR,STATE,ID,HOUSE) values (\'"+num.getText()+"\',\'"+name.getText()+"\',\'"+state+"\',\'"+cla.getText()+"\',\'"+scl.getText()+"\')");
+                    int a=jdbc.getSt().executeUpdate("insert into books (NAME,AUTHOR,STATE,ID,HOUSE) values (\'"+this.name.getText()+"\',\'"+this.author.getText()+"\',\'"+state+"\',\'"+this.id.getText()+"\',\'"+this.house.getText()+"\')");
                     if(a==1){
                         JOptionPane.showMessageDialog(null,"信息成功添加");
-                        setVisible(false);
+                        setVisible(true);
+                        this.name.setText("");
+                        this.author.setText("");
+                        this.id.setText("");
+                        this.house.setText("");
+                        this.name.requestFocus();
                     }
                     else {
                         JOptionPane.showMessageDialog(null,"信息添加失败");
@@ -115,11 +121,11 @@ public class Addinfo extends JFrame implements ActionListener{
             }
         }
         else {
-            num.setText("");
             name.setText("");
-            cla.setText("");
-            scl.setText("");
-            num.requestFocus();
+            author.setText("");
+            id.setText("");
+            house.setText("");
+            name.requestFocus();
         }
     }
     public static void main(String[] args){

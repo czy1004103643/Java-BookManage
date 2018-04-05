@@ -5,7 +5,7 @@ import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Teacher extends JFrame implements ActionListener {
+public class Teacher extends JFrame implements ActionListener,WindowListener {
     Jdbc jdbc=null;
     /*JMenuBar bar=new JMenuBar();
     JMenu menu1=new JMenu("信息");
@@ -90,5 +90,41 @@ public class Teacher extends JFrame implements ActionListener {
         if(e.getSource()==bt3){
             Change change=new Change(jdbc);
         }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+        System.out.println("jdbc关闭了");
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        System.out.println("jdbc关闭了");
+        jdbc.close();
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }
