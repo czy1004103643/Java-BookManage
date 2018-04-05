@@ -1,0 +1,59 @@
+package Books;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Start extends JFrame implements ActionListener{
+
+    Jdbc jdbc=null;
+    JPanel panel=new JPanel();
+    JLabel label1=new JLabel("管理员登录");
+    JLabel label2=new JLabel("借书通道");
+    JLabel label3=new JLabel();
+    JButton button1=new JButton("我是管理员");
+    JButton button2=new JButton("我是借阅者");
+
+    public Start(Jdbc jdbc){
+        super("图书管理系统");
+        this.jdbc=jdbc;
+        this.setSize(400,300);
+        this.setResizable(false);
+        panel.setOpaque(false);
+        panel.setLayout(null);
+        button1.setBounds(50,120,140,40);
+        button1.setFont(new Font("微软雅黑",Font.BOLD,20));
+        button2.setBounds(200,120,140,40);
+        button2.setFont(new Font("微软雅黑",Font.BOLD,20));
+        button1.addActionListener(this);
+        button2.addActionListener(this);
+        label1.setBounds(70,30,100,100);
+        label2.setBounds(230,30,100,100);
+        label1.setFont(new Font("微软雅黑",Font.BOLD,20));
+        label2.setFont(new Font("微软雅黑",Font.BOLD,20));
+        panel.add(label1);
+        panel.add(label2);
+        panel.add(button1);
+        panel.add(button2);
+        this.add(panel);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==button1){
+            this.setVisible(false);
+            new Login(jdbc);
+        }
+        else if(e.getSource()==button2){
+
+        }
+    }
+    public static void main(String[] args){
+        Jdbc jdbc=new Jdbc();
+        new Start(jdbc);
+    }
+}
