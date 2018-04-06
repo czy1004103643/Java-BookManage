@@ -4,12 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Modinfo extends JFrame implements ActionListener{
+public class Modinfo extends JDialog implements ActionListener{
     Jdbc jdbc=null;
-    JPanel panel=new JPanel();
     JLabel label1=new JLabel("书名",JLabel.CENTER);
     JLabel label2=new JLabel("作者",JLabel.CENTER);
     JLabel label3=new JLabel("状态",JLabel.CENTER);
@@ -25,18 +26,16 @@ public class Modinfo extends JFrame implements ActionListener{
     JButton reset=new JButton("清空");
     JButton addmsg=new JButton("修改");
 
-    public Modinfo(Jdbc jdbc,String title,Manage manage,int rowNum){
-        super(title);
+    public Modinfo(Jdbc jdbc,Frame owner,String title,boolean model,Manage manage,int rowNum){
+        super(owner,title,model);
         System.out.println("进入构造函数");
         this.jdbc=jdbc;
         Font font=new Font("微软雅黑",Font.BOLD,20);
         this.setSize(500,400);
-        this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.add(panel);
-        panel.setLayout(null);
+        this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        this.setLayout(null);
         addmsg.addActionListener(this);
         reset.addActionListener(this);
         label1.setFont(font);
@@ -49,11 +48,11 @@ public class Modinfo extends JFrame implements ActionListener{
         label3.setBounds(135, 140, 70, 20);
         label4.setBounds(135, 180, 70, 20);
         label5.setBounds(135, 220, 70, 20);
-        panel.add(label1);
-        panel.add(label2);
-        panel.add(label3);
-        panel.add(label4);
-        panel.add(label5);
+        this.add(label1);
+        this.add(label2);
+        this.add(label3);
+        this.add(label4);
+        this.add(label5);
         name.setBounds(190,60,140,20);
         author.setBounds(190,100,140,20);
         R1.setBounds(200,140,80,20);
@@ -73,16 +72,17 @@ public class Modinfo extends JFrame implements ActionListener{
         }
         id.setText((String)manage.getValueAt(rowNum,3));
         house.setText((String)manage.getValueAt(rowNum,4));
-        panel.add(name);
-        panel.add(author);
-        panel.add(R1);
-        panel.add(R2);
-        panel.add(id);
-        panel.add(house);
-        panel.add(reset);
-        panel.add(addmsg);
+        this.add(name);
+        this.add(author);
+        this.add(R1);
+        this.add(R2);
+        this.add(id);
+        this.add(house);
+        this.add(reset);
+        this.add(addmsg);
         bgp.add(R1);
         bgp.add(R2);
+        this.setVisible(true);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -108,12 +108,15 @@ public class Modinfo extends JFrame implements ActionListener{
                     state="未借";
                 }
                 try{
-                    ResultSet rs=jdbc.getSt().executeQuery("select * from books where name=\'"+name+"\'");
+                    /*ResultSet rs=jdbc.getSt().executeQuery("select * from books where name=\'"+name+"\'");
                     if(rs.next()) {
                         String sql = "delect from books where name=\'" + name + "\'";
                         jdbc.getSt().executeUpdate(sql);
-                    }
-                    int a=jdbc.getSt().executeUpdate("insert into books (NAME,AUTHOR,STATE,ID,HOUSE) values (\'"+this.name.getText()+"\',\'"+this.author.getText()+"\',\'"+state+"\',\'"+this.id.getText()+"\',\'"+this.house.getText()+"\')");
+                    }*/
+                    int a=jdbc.getSt().executeUpdate("update books set name='"+name+"',author='"
+                            +author+"',state='"+state+"',house='"+house+"' where id='"+id+"'");
+                    System.out.println("update books set name='"+name+"',author='"
+                            +author+"',state='"+state+"',house='"+house+"' where id='"+id+"'");
                     if(a==1){
                         JOptionPane.showMessageDialog(null,"信息成功添加");
                         setVisible(true);

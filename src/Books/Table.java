@@ -108,8 +108,10 @@ public class Table extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(this,"请选择一行");
                 return;
             }
-            Modinfo modinfo=new Modinfo(jdbc,"修改图书信息",manage,rowNum);
-
+            new Modinfo(jdbc,this,"修改图书信息",true,manage,rowNum);
+            System.out.println("没有阻塞");
+            manage=new Manage(jdbc);
+            jt.setModel(manage);
         }
     }
 }
