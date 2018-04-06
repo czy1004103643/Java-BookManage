@@ -20,11 +20,16 @@ public class Table extends JFrame implements ActionListener{
     JButton bt5=null;
     JTextField tf=null;
     Manage manage;
+    int i,j;
 
     Table(Jdbc jdbc){
         super("查看图书信息");
         this.jdbc=jdbc;
         manage=new Manage(jdbc);
+        /////////////////////
+        i=0;
+        j=manage.getColumnCount();
+        ////////////////////////
         jt=new JTable(manage);
         jt.getTableHeader().setFont(new Font("楷体",Font.BOLD,20));
         DefaultTableCellRenderer r=new DefaultTableCellRenderer();
@@ -112,6 +117,12 @@ public class Table extends JFrame implements ActionListener{
             System.out.println("没有阻塞");
             manage=new Manage(jdbc);
             jt.setModel(manage);
+        }
+        if(e.getSource()==bt2){
+
+        }
+        if(e.getSource()==bt3){
+
         }
     }
 }
