@@ -5,6 +5,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class User extends JFrame implements ActionListener{
     Jdbc jdbc=null;
@@ -40,6 +42,17 @@ public class User extends JFrame implements ActionListener{
         jt1.setFont(new Font("微软雅黑",Font.BOLD,20));
         jt1.setRowHeight(30);
         jt1.setBounds(0,0,500,500);
+
+        jt1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(e.getClickCount()==1){
+                    int row =((JTable)e.getSource()).rowAtPoint(e.getPoint());
+                    int col=((JTable)e.getSource()).columnAtPoint(e.getPoint());
+                    System.out.println((String)usManage1.getValueAt(row,col));
+                }
+            }
+        });
 
         jt2=new JTable(usManage2);
         jt2.getTableHeader().setFont(new Font("楷体",Font.BOLD,20));

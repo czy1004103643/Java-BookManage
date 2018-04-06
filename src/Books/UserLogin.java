@@ -74,10 +74,12 @@ public class UserLogin extends JFrame implements ActionListener{
                         if (rs.getString("PASSWORD").equals(pass)) {
                             this.setVisible(false);
                             new User(jdbc,id);
-                        } else {
+                        }
+                        else {
                             JOptionPane.showMessageDialog(null, "你输入的密码有误");
                         }
-                    } else {
+                    }
+                    else {
                         JOptionPane.showMessageDialog(null, "用户名不存在");
                     }
                 } catch (Exception ee) {
