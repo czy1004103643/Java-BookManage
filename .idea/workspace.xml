@@ -2,16 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3045af52-5516-4a72-b962-f4bf950f0b3a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Books/UsManage.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Books/UserLogin.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Userback.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/三体.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/三剑客.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/假如给我三天光明.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/傲慢与偏见.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/初恋.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/卡门.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/双城记.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/唐吉坷德.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/地心洪炉.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/地心游记.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/基督教并不神秘.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/威尔斯科幻小说选.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/安娜.卡列尼娜.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/小妇人.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/巨人传.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/巴黎圣母院.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/幽谷百合.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/德伯家的苔丝.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/忏悔录.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/战争与和平.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/故事与话语.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/无名的裘德.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/时间机器.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/月亮宝石.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/格兰特船长的儿女.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/欧亨利短篇小说精选.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/法兰克人史.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/泰戈尔诗选.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/海底两万里.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/爱的教育.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/物种起源.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/狄德罗小说选.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/理想国.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/瓦尔登湖.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/福尔摩斯探案全集.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/童年.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/简爱.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/红与黑.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/罗宾汉.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/老人与海.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/茶花女.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/裴洞篇.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/透明光.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/雪山魔笛.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/飘.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/飞鸟集.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/马克吐温中短篇小说集.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/高卢战记.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/java图书管理系统/Books/UsManage.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/java图书管理系统/Books/UserLogin.class" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/java图书管理系统/Books/Modinfo.class" afterPath="$PROJECT_DIR$/out/production/java图书管理系统/Books/Modinfo.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/java图书管理系统/Books/Start.class" afterPath="$PROJECT_DIR$/out/production/java图书管理系统/Books/Start.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/java图书管理系统/Books/Table.class" afterPath="$PROJECT_DIR$/out/production/java图书管理系统/Books/Table.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/java图书管理系统/Books/User.class" afterPath="$PROJECT_DIR$/out/production/java图书管理系统/Books/User.class" />
-      <change beforePath="$PROJECT_DIR$/src/Books/Start.java" afterPath="$PROJECT_DIR$/src/Books/Start.java" />
-      <change beforePath="$PROJECT_DIR$/src/Books/Table.java" afterPath="$PROJECT_DIR$/src/Books/Table.java" />
-      <change beforePath="$PROJECT_DIR$/src/Books/User.java" afterPath="$PROJECT_DIR$/src/Books/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -540,7 +582,7 @@
       <workItem from="1522936054449" duration="9107000" />
       <workItem from="1522946126730" duration="335000" />
       <workItem from="1522980217338" duration="6897000" />
-      <workItem from="1522993117329" duration="9934000" />
+      <workItem from="1522993117329" duration="10187000" />
     </task>
     <task id="LOCAL-00001" summary="增加修改功能">
       <created>1522946359558</created>
@@ -556,11 +598,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522987237964</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加用户界面">
+      <created>1523005062310</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523005062310</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94532000" />
+    <option name="totallyTimeSpent" value="94785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -604,7 +653,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加修改功能" />
     <MESSAGE value="修复修改功能bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复修改功能bug" />
+    <MESSAGE value="增加用户界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加用户界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
