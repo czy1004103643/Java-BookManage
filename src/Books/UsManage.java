@@ -45,13 +45,14 @@ public class UsManage extends AbstractTableModel{
     public void init(String sql){
         System.out.println("init");
         if(sql.equals("")){
-            sql="select name,author,house from books where state='未借'";
+            sql="select name,author,id,house from books where state='未借'";
         }
         //初始化数据模型
         col=new Vector();
         //设置列名
         col.add("书名");
         col.add("作者");
+        col.add("编号");
         col.add("出版社");
         row=new Vector();
         try {
@@ -61,6 +62,7 @@ public class UsManage extends AbstractTableModel{
                 group.add(rs.getString(1));
                 group.add(rs.getString(2));
                 group.add(rs.getString(3));
+                group.add(rs.getString(4));
                 row.add(group);
             }
         }catch (Exception e){
