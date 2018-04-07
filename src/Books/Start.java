@@ -3,9 +3,11 @@ package Books;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.*;
 
-public class Start extends JFrame implements ActionListener{
+public class Start extends JFrame implements ActionListener,WindowListener{
     JPanel imagePanel;
     ImageIcon background;
     JButton book,people;
@@ -74,5 +76,40 @@ public class Start extends JFrame implements ActionListener{
         else if(e.getSource()==people){
             new Login(jdbc);
         }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        this.jdbc.close();
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }

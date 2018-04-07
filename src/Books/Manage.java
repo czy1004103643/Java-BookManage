@@ -56,6 +56,7 @@ public class Manage extends AbstractTableModel{
         col.add("状态");
         col.add("编号");
         col.add("出版社");
+        col.add("借书人");
         row=new Vector();
         try {
             ResultSet rs = jdbc.getSt().executeQuery(sql);
@@ -66,6 +67,7 @@ public class Manage extends AbstractTableModel{
                 group.add(rs.getString(3));
                 group.add(rs.getString(4));
                 group.add(rs.getString(5));
+                group.add(rs.getString(6));
                 row.add(group);
             }
         }catch (Exception e){

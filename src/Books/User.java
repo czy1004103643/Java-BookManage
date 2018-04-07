@@ -25,6 +25,10 @@ public class User extends JFrame implements ActionListener{
     JLabel picLabel=null;
     JButton button1=null;
     JButton button2=null;
+    JButton button3=null;
+    ImageIcon icon1=null;
+    ImageIcon icon2=null;
+    JTextField tf=null;
 
     public User(Jdbc jdbc,String name){
         super("欢迎来到图书馆");
@@ -38,6 +42,9 @@ public class User extends JFrame implements ActionListener{
         JLabel backlabel=new JLabel(background);
         backlabel.setBounds(0,0,background.getIconWidth(),background.getIconHeight());
         this.getLayeredPane().add(backlabel,new Integer(Integer.MIN_VALUE));
+        tf=new JTextField(10);
+        tf.setFont(new Font("微软雅黑",Font.PLAIN,20));
+        tf.setBounds(250,600,250,40);
         panel=(JPanel)this.getContentPane();
         panel.setLayout(null);
         panel.setOpaque(false);
@@ -91,23 +98,41 @@ public class User extends JFrame implements ActionListener{
         //////////////////////////////////////////////
         jsp2=new JScrollPane(jt2);
         jsp2.setBounds(500,0,500,250);
+        jsp1.setOpaque(false);
+        jsp1.getViewport().setOpaque(false);
+        jsp2.setOpaque(false);
+        jsp2.getViewport().setOpaque(false);
         picLabel=new JLabel();
         //////////////////////////////////////////
         picLabel.setBounds(500,250,300,320);
         /////////////////////////////////////////////
         button1=new JButton("借书");
         button2=new JButton("还书");
+        button3=new JButton("查询");
+        button1.setContentAreaFilled(false);
+        button2.setContentAreaFilled(false);
+        button1.setBorderPainted(false);
+        button2.setBorderPainted(false);
+        icon1=new ImageIcon("jie.png");
+        icon2=new ImageIcon("huan.png");
+        button1.setIcon(icon1);
+        button2.setIcon(icon2);
         ////////////////////////////////////////
         button1.setBounds(800,248,200,162);
         button2.setBounds(800,409,200,162);
+        button3.setBounds(500,600,100,40);
+        button3.setFont(new Font("微软雅黑",Font.BOLD,20));
         ////////////////////////////////////////
         button1.addActionListener(this);
         button2.addActionListener(this);
+        button3.addActionListener(this);
         panel.add(button1);
         panel.add(button2);
+        panel.add(button3);
         panel.add(picLabel);
         panel.add(jsp1);
         panel.add(jsp2);
+        panel.add(tf);
         panel.setBounds(0,0,1000,700);
 
         this.setSize(background.getIconWidth(),background.getIconHeight());
@@ -153,6 +178,13 @@ public class User extends JFrame implements ActionListener{
                     +name+"'");
             jt2.setModel(usManage2);
         }
+        if(e.getSource()==button3){
+            String name=this.tf.getText().trim();
+            String sql="select * from books where name like '%"+name+"%'";
+            usManage1=new UsManage(jdbc,sql);
+            jt1.setModel(usManage1);
+        }
+
     }
 
     public static void main(String[] args){

@@ -78,7 +78,7 @@ public class Table extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==bt4){
             String name=this.tf.getText().trim();
-            String sql="select * from books where name='"+name+"'";
+            String sql="select * from books where name like '%"+name+"%'";
             manage=new Manage(jdbc,sql);
             jt.setModel(manage);
         }
