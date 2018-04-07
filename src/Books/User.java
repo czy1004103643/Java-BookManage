@@ -49,7 +49,9 @@ public class User extends JFrame implements ActionListener{
         jt1.setDefaultRenderer(Object.class,r1);
         jt1.setFont(new Font("微软雅黑",Font.BOLD,20));
         jt1.setRowHeight(30);
-        jt1.setBounds(0,0,500,500);
+        ///////////////////////////////////////////
+        jt1.setBounds(0,0,500,571);
+        ///////////////////////////////////////////
 
         jt1.addMouseListener(new MouseAdapter() {
             @Override
@@ -84,15 +86,21 @@ public class User extends JFrame implements ActionListener{
         jt2.setBounds(500,0,500,250);
 
         jsp1=new JScrollPane(jt1);
-        jsp1.setBounds(0,0,500,500);
+        //////////////////////////////////////////////
+        jsp1.setBounds(0,0,500,571);
+        //////////////////////////////////////////////
         jsp2=new JScrollPane(jt2);
         jsp2.setBounds(500,0,500,250);
         picLabel=new JLabel();
+        //////////////////////////////////////////
         picLabel.setBounds(500,250,300,320);
+        /////////////////////////////////////////////
         button1=new JButton("借书");
         button2=new JButton("还书");
-        button1.setBounds(50,600,100,100);
-        button2.setBounds(180,600,100,100);
+        ////////////////////////////////////////
+        button1.setBounds(800,248,200,162);
+        button2.setBounds(800,409,200,162);
+        ////////////////////////////////////////
         button1.addActionListener(this);
         button2.addActionListener(this);
         panel.add(button1);

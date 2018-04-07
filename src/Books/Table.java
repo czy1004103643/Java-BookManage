@@ -14,8 +14,6 @@ public class Table extends JFrame implements ActionListener{
     JScrollPane jsp=null;
     JPanel panel1=null;
     JButton bt1=null;
-    JButton bt2=null;
-    JButton bt3=null;
     JButton bt4=null;
     JButton bt5=null;
     JTextField tf=null;
@@ -45,26 +43,20 @@ public class Table extends JFrame implements ActionListener{
         panel1.add(jsp);
         panel1.setBounds(0,0,1000,500);
         bt1=new JButton("修改");
-        bt2=new JButton("上一页");
-        bt3=new JButton("下一页");
         bt4=new JButton("查询");
         bt5=new JButton("删除");
         tf=new JTextField(10);
+        //////////////////////////////////////////////
         bt1.setBounds(100,550,100,50);
-        bt2.setBounds(300,550,100,50);
-        bt3.setBounds(500,550,100,50);
-        bt4.setBounds(700,550,100,50);
-        bt5.setBounds(800,550,100,50);
+        bt4.setBounds(600,550,100,50);
+        bt5.setBounds(250,550,100,50);
         tf.setFont(new Font("微软雅黑",Font.PLAIN,20));
-        tf.setBounds(500,500,200,30);
+        tf.setBounds(720,555,200,40);
+        ////////////////////////////////////////////////////
         bt1.addActionListener(this);
-        bt2.addActionListener(this);
-        bt3.addActionListener(this);
         bt4.addActionListener(this);
         bt5.addActionListener(this);
         this.add(bt1);
-        this.add(bt2);
-        this.add(bt3);
         this.add(bt4);
         this.add(bt5);
         this.add(tf);
@@ -117,12 +109,6 @@ public class Table extends JFrame implements ActionListener{
             System.out.println("没有阻塞");
             manage=new Manage(jdbc);
             jt.setModel(manage);
-        }
-        if(e.getSource()==bt2){
-
-        }
-        if(e.getSource()==bt3){
-
         }
     }
 }

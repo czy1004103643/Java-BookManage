@@ -1,6 +1,7 @@
 package Books;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -8,9 +9,9 @@ import java.sql.ResultSet;
 public class UserLogin extends JFrame implements ActionListener{
     Jdbc jdbc=null;
     JPanel panel;
-    JLabel label1=new JLabel("账号");
+    JLabel label1=new JLabel("账号:");
     JTextField username=new JTextField();
-    JLabel label2=new JLabel("密码");
+    JLabel label2=new JLabel("密码:");
     JPasswordField password=new JPasswordField();
     JButton enter=new JButton("登录");
     JButton register=new JButton("注册");
@@ -24,18 +25,25 @@ public class UserLogin extends JFrame implements ActionListener{
         JLabel back=new JLabel(background);
         this.setResizable(false);
         this.setSize(background.getIconWidth(),background.getIconHeight());
-        enter.setBounds(210,180,70,20);
-        exit.setBounds(290,180,70,20);
+        //////////////////////////////////////////////////////////
+        enter.setBounds(180,180,70,20);
+        exit.setBounds(260,180,70,20);
         register.setBounds(100,180,70,20);
+        /////////////////////////////////////////////////////////////
         enter.addActionListener(this);
         exit.addActionListener(this);
         register.addActionListener(this);
         this.getLayeredPane().add(back,new Integer(Integer.MIN_VALUE));
         back.setBounds(0,0,background.getIconWidth(),background.getIconHeight());
-        label1.setBounds(175,90,50,25);
-        username.setBounds(210,90,150,25);
-        label2.setBounds(175,125,50,25);
-        password.setBounds(210,125,150,25);
+        ///////////////////////////////////////////////////////////////////
+        Font font=new Font("微软雅黑",Font.BOLD,15);
+        label1.setBounds(115,90,50,25);
+        label1.setFont(font);
+        username.setBounds(150,90,150,25);
+        label2.setBounds(115,125,50,25);
+        label2.setFont(font);
+        password.setBounds(150,125,150,25);
+        //////////////////////////////////////////////////////
         //this.setBounds(110,60,540,320);
         //this.add(panel);
         panel=(JPanel)this.getContentPane();

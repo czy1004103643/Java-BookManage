@@ -32,9 +32,9 @@ public class Start extends JFrame implements ActionListener{
         people.addActionListener(this);
 
         /////////在此处修改两个按钮和一个标题的位置和大小/////////////////////
-        book.setBounds(100,100,300,150);
-        people.setBounds(300,200,300,150);
-        title.setBounds(300,300,600,350);
+        book.setBounds(540,505,300,150);
+        people.setBounds(10,500,240,148);
+        title.setBounds(265,-80,600,350);
         ///////////////////////////////////////////////////////////////
 
         background=new ImageIcon("back.png");

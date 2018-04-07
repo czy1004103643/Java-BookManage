@@ -47,7 +47,7 @@ public class Modinfo extends JDialog implements ActionListener{
         label2.setBounds(135, 100, 70, 20);
         label3.setBounds(135, 140, 70, 20);
         label4.setBounds(135, 180, 70, 20);
-        label5.setBounds(135, 220, 70, 20);
+        label5.setBounds(125, 220, 70, 20);
         this.add(label1);
         this.add(label2);
         this.add(label3);
@@ -142,10 +142,5 @@ public class Modinfo extends JDialog implements ActionListener{
             house.setText("");
             name.requestFocus();
         }
-    }
-    public static void main(String[] args){
-        Jdbc jdbc=new Jdbc();
-        new Addinfo(jdbc);
-        jdbc.close();
     }
 }
